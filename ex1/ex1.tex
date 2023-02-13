@@ -1,0 +1,70 @@
+\documentclass[11pt]{amsart}
+\usepackage{aurical}
+%\usepackage{ccfonts} % this sets the fonts for tics in figures and equations.
+\usepackage[T1]{fontenc}
+\renewcommand*{\familydefault}{AuriocusKalligraphicus}
+%\renewcommand*{\rmdefault}{AuriocusKalligraphicus}
+%\renewcommand*{\sfdefault}{AuriocusKalligraphicus}
+
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{color}
+\usepackage{multicol}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Figures and fonts matching Journal guidelines with Gnuplot.jl}
+\author{Lazaro Alonso}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\begin{multicols}{2}
+What happens if we write some equations here? what would be the family font?
+
+\begin{equation}
+\frac{1}{2\pi i} \int_{\gamma} f = \sum_{k=1}^{m} n(\gamma; a_{k}) Res(f; a_{k}).
+\end{equation}
+
+\begin{figure}
+\resizebox{.48\linewidth}{!}{\input{test.tex}}
+\resizebox{.48\linewidth}{!}{\input{test_torus.tex}}
+
+  \caption{Here it goes our nice caption explaining what all colours and lines are about. Note the mix of normal text and
+  \LaTeX -like equations fonts.}
+\end{figure}
+
+\begin{figure}
+  \resizebox{.48\linewidth}{!}{\input{test_heatmap.tex}}
+  \resizebox{.48\linewidth}{!} {\input{test_line3d.tex}}
+
+  \caption{Here it goes our nice caption explaining what all colours and lines are about. Note the mix of normal text and
+  \LaTeX -like equations fonts.}
+\end{figure}
+
+
+\begin{figure}
+  \resizebox{.48\linewidth}{!}{\input{test_ls.tex}}
+  \resizebox{.48\linewidth}{!}{\input{test_dates.tex}}
+  \caption{Here it goes our nice caption explaining what all colours and lines are about. Note the mix of normal text and
+  \LaTeX -like equations fonts.}
+\end{figure}
+
+\begin{figure}
+\resizebox{.48\linewidth}{!} {\input{test_gpp.tex}}
+  \resizebox{.48\linewidth}{!} {\textcolor{white}{
+  {\input{test_topo.tex}
+  }}}\\
+  {\footnotesize
+\input{test_log.tex}
+}
+  \caption{Here it goes our nice caption explaining what all colours and lines are about. Note the mix of normal text and
+  \LaTeX -like equations fonts.}
+\end{figure}
+
+\end{document}
